@@ -1,0 +1,15 @@
+{% extends 'blog_de_cuisine/base.html' %}
+{% block content %}
+    <div class="container">
+        <h1>Supprimer la publication</h1>
+        <p>Es-tu sûr de vouloir supprimer cette publication ?</p>
+        <p><strong>{{ publication.titre }}</strong></p>
+
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-delete">Supprimer</button>
+            <a href="{% url 'dashboard' %}" class="btn btn-cancel">Annuler</a>
+        </form>
+    </div>
+ 
+{% endblock %}

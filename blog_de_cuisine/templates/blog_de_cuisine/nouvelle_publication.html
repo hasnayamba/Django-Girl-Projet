@@ -1,0 +1,12 @@
+{% extends 'blog_de_cuisine/base.html' %}
+{% block content %}
+   
+                    <div class="my-5">
+                         <form method="POST" class="post-form">{% csrf_token %}
+                                {{ form.as_p }}
+                         <button type="submit" class="save btn btn-default">Ajouter</button>
+                         </form>
+                          </div>
+
+     
+{% endblock %}

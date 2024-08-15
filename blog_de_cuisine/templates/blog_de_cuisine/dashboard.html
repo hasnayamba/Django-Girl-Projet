@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord des Publications</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrQkz6F0aGzEhMdbftR7M7JL3FGdF+6hTf1s2DzZ8sM5p9eZWd/nZ5v/ZdAx+jEuZPZj7dwvGT0STSjp6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Tableau de Bord des Publications</h1>
+        <a href="{% url 'nouvelle_publication' %}" class="btn btn-add"><i class="fas fa-plus"></i> Ajouter une nouvelle publication</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Date de Creation</th>
+                    <th>Date de publication</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for publication in publications %}
+                <tr>
+                    <td>{{ publication.titre }}</td>
+                    <td>{{ publication.created_date }}</td>
+                    <td>{{ publication.publication_date }}</td>
+                    <td>
+                        <a href="{% url 'publication_detail' publication.pk %}" class="btn btn-view"><i class="fas fa-eye"></i></a>
+                        <a href="{% url 'modifier_publication' publication.pk %}" class="btn btn-edit"><i class="fas fa-edit"></i></a>
+                         <a href="{% url 'supprimer_publication' publication.pk %}" class="btn btn-delete"><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

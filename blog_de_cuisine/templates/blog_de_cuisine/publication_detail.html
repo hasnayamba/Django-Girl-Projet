@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Esthétique</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            margin-top: 0;
+            color: #ff7e5f;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{ publication.titre }}</h1>
+    </header>
+
+    <div class="container">
+        <div class="content">
+         <img src="{{publication.plat.url }}" alt="{{ publication.plat }}" style="width:200px;" class="img-fluid">
+         <br>
+           <h2>Plus de details</h2>
+            <p>{{ publication.texte|linebreaksbr }}</p>
+            <p>Publier par : {{ publication.auteur }} a
+            <time class="date">
+                {{ publication.publication_date }}
+            </time></p>
+        </div>
+    </div>
+
+    </body>
+</html>

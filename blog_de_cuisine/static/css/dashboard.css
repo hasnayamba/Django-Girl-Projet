@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add {
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-view {
+    background-color: #2196F3;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-edit {
+    background-color: #FFC107;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-delete {
+    background-color: #F44336;
+    color: white;
+    text-decoration: none;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+table td a {
+    text-decoration: none;
+}
+
+.fas {
+    margin-right: 5px;
+}
